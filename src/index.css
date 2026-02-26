@@ -1,0 +1,196 @@
+:root {
+  /* Brand Colors from Figma */
+  --primary: #004D41;
+  /* Dark Teal from screenshot */
+  --primary-light: #C8E3E1;
+  /* Light Teal background */
+  --secondary: #00847F;
+  /* Medium Teal */
+  --accent: #F05A28;
+  /* Orange for Progress/Warnings */
+  --success: #09814A;
+  --error: #D0021B;
+  --white: #FFFFFF;
+  --black: #000000;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #00423F 0%, #002B2B 100%);
+  --gradient-teal: linear-gradient(135deg, #00847F 0%, #00423F 100%);
+
+  /* Backgrounds */
+  --bg-light: #F8FAFB;
+  --bg-card: #FFFFFF;
+  --bg-teal: #00423F;
+  /* Used for the 'coloured' dashboard cards */
+
+  /* Text */
+  --text-main: #1A1C1E;
+  --text-muted: #6C7278;
+  --text-on-teal: #E6F0EF;
+
+  /* Borders */
+  --border-light: #E9ECEF;
+  --border-focus: #00847F;
+
+  /* Elevation */
+  --shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0px 8px 16px rgba(0, 0, 0, 0.08);
+  --shadow-teal: 0px 8px 24px rgba(0, 66, 63, 0.2);
+
+  /* Radius */
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 99px;
+
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 430px;
+  /* iPhone 14/15 Pro width */
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--bg-light);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
+}
+
+.landing-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--white);
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Components matching 'Coloured Designs' */
+.card-coloured {
+  background-color: var(--primary);
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-number {
+  background-color: white;
+  color: var(--primary);
+  width: 40px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  border-radius: 8px;
+}
+
+.newsletter-box {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  display: flex;
+  padding: 4px;
+  margin-top: 1.5rem;
+}
+
+.newsletter-box input {
+  border: none;
+  padding: 0.75rem 1rem;
+  flex: 1;
+  outline: none;
+}
+
+.newsletter-box button {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.footer-section {
+  background-color: var(--primary);
+  color: white;
+  padding: 3rem 1.5rem;
+}
+
+.footer-link {
+  color: white;
+  opacity: 0.8;
+  text-decoration: none;
+  font-size: 0.875rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Stepper from Figma */
+.stepper-line {
+  height: 2px;
+  background: repeating-linear-gradient(to right, white 0, white 4px, transparent 4px, transparent 8px);
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.stepper-dot {
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  z-index: 2;
+}
+
+.stepper-dot.active {
+  background-color: var(--accent);
+  border-color: white;
+  box-shadow: 0 0 0 4px rgba(240, 90, 40, 0.3);
+}
+
+.stepper-label {
+  font-size: 10px;
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
